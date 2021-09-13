@@ -12,5 +12,5 @@ try {
   flow.process(operation);
 } catch (err) {
   //catch errors
-  console.log("Unable to do the operation given. Please verify.");
+  console.log(err);
 }

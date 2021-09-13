@@ -14,11 +14,42 @@ module.exports = {
     //extracting each number by substrings
     let firstStringNum = operation.substring(0, searchOp);
     let secondStringNum = operation.substring(searchOp + 2, operation.length);
+    let operator = operation[searchOp];
+    let result;
 
     const firstNumber = new Fraction(firstStringNum);
     const secondNumber = new Fraction(secondStringNum);
 
-    let operator = operation[searchOp];
+    if (operator == '/' && secondNumber.numerator == '0') {
+    	throw "Can't divide y zero.";
+    }
+
+    if (operator == '-' && firstNumber.numerator == '0') {
+    	result = "-"+secondStringNum;
+    	console.log("= " + result);
+    	return result;
+    }
+
+    if (firstNumber.numerator == '0' || secondNumber.numerator == '0') {
+
+		switch (operator) {
+		    case "+":
+		    case "-":
+		      if (firstNumber.numerator == '0') {
+		      	result = secondStringNum;
+		      } else {
+		      	result = firstStringNum;
+		      }
+		      break;
+		    case "/":
+		    case "*":
+		      result = 0;
+		      break;
+		  }
+
+		console.log("= " + result);
+    	return result;
+    }
 
     result = calculation(firstNumber, operator, secondNumber);
 
