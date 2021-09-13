@@ -5,6 +5,7 @@ try{
 let readline = require('readline-sync');
 const flow = require('./process.js');
 
+//user input
 let operation = readline.question("? ");
 
 //Starts the operation calculation process calling the process.js process module.
