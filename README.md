@@ -22,3 +22,4 @@ Language used: javascript (using nodejs)
 ### How to run the tests
 1. Go into your terminal and navegate to the repo folder
 2. run command npm test to run the mocha unit testing from the challenge
+3. Test will run automated
