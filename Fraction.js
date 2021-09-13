@@ -34,5 +34,9 @@ module.exports = class Fraction {
       this.numerator = intNum * intNum;
       this.denominator = intNum;
     }
+
+    //throwing error if one number is not correct.
+    if (isNaN(this.numerator) || isNaN(this.denominator))
+      throw "Unable to do the operation given. Please verify.";
   }
 };

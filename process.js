@@ -1,8 +1,8 @@
 /*process js which handles the start of the process creating the necesary objects and calling the calculation function which
-	does all the operation
+  does all the operation
 */
 const Fraction = require("./Fraction.js");
-const { calculation } = require("./Operation");
+const { calculation } = require("./calculation");
 module.exports = {
   process: function (operation) {
     let searchOp;
@@ -20,35 +20,34 @@ module.exports = {
     const firstNumber = new Fraction(firstStringNum);
     const secondNumber = new Fraction(secondStringNum);
 
-    if (operator == '/' && secondNumber.numerator == '0') {
-    	throw "Can't divide y zero.";
+    if (operator == "/" && secondNumber.numerator == "0") {
+      throw "Can't divide y zero.";
     }
 
-    if (operator == '-' && firstNumber.numerator == '0') {
-    	result = "-"+secondStringNum;
-    	console.log("= " + result);
-    	return result;
+    if (
+      operator == "-" &&
+      firstNumber.numerator == 0 &&
+      secondNumber.numerator != 0
+    ) {
+      result = "-" + secondStringNum.replace(/ /g, "");
+      console.log("= " + result);
+      return result;
     }
 
-    if (firstNumber.numerator == '0' || secondNumber.numerator == '0') {
+    if (firstNumber.numerator == 0 || secondNumber.numerator == 0) {
+      switch (operator) {
+        case "+":
+        case "-":
+          result =
+            firstNumber.numerator == 0 ? secondStringNum : firstStringNum;
+          break;
+        default:
+          result = 0;
+          break;
+      }
 
-		switch (operator) {
-		    case "+":
-		    case "-":
-		      if (firstNumber.numerator == '0') {
-		      	result = secondStringNum;
-		      } else {
-		      	result = firstStringNum;
-		      }
-		      break;
-		    case "/":
-		    case "*":
-		      result = 0;
-		      break;
-		  }
-
-		console.log("= " + result);
-    	return result;
+      console.log("= " + result);
+      return result;
     }
 
     result = calculation(firstNumber, operator, secondNumber);
