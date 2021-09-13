@@ -18,8 +18,10 @@ Language used: javascript (using nodejs)
 3. Go into your terminal and navegate to the repo folder
 4. run the command npm install
 5. run the command npm start or run node main.js
+6. Enter the disired operation (Operand operator Operand) -- Operands and operators can be separated by one or more spaces
+7. Result will be shown
 
 ### How to run the tests
 1. Go into your terminal and navegate to the repo folder
 2. run command npm test to run the mocha unit testing from the challenge
-3. Test will run automated
+3. Assigned tests will run
