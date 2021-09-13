@@ -3,13 +3,13 @@ exports.calculation = (firstNumber,operator,secondNumber) => {
 	  
 	  switch(operator){
         case "+":
-		case "-":
-			({resultNumerator, resultDenominator} = addOrSubstract(firstNumber,operator,secondNumber));
-			break;
+				case "-":
+					({resultNumerator, resultDenominator} = addOrSubstract(firstNumber,operator,secondNumber));
+					break;
         case "/":
-		case "*":
-			({resultNumerator, resultDenominator} = multiplyOrDivide(firstNumber,operator,secondNumber));
-            break;
+				case "*":
+					({resultNumerator, resultDenominator} = multiplyOrDivide(firstNumber,operator,secondNumber));
+	            break;
     }
 
 	({resultNumerator, resultDenominator, resultWholeNumber, flagWhole} = simplify(resultNumerator,resultDenominator));
@@ -71,7 +71,7 @@ exports.calculation = (firstNumber,operator,secondNumber) => {
 			flagWhole = 2;
 		}
     }else{
-		resultNumerator = num;
+				resultNumerator = num;
         resultDenominator = denom;
 	}
 	

@@ -29,9 +29,9 @@ module.exports = class Fraction {
 			this.denominator = parseInt(denom);
 	  } else {
 		//Keeping whole numbers input as fraction for easier managing the operation
-		let intNum = parseInt(stringNumber);
-		this.numerator = (intNum * intNum);
-		this.denominator = intNum;
+			let intNum = parseInt(stringNumber);
+			this.numerator = (intNum * intNum);
+			this.denominator = intNum;
 	  }
   }
   
