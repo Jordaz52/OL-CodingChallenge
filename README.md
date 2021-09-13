@@ -22,6 +22,6 @@ Language used: javascript (using nodejs)
 7. Result will be shown
 
 ### How to run the tests
-1. Go into your terminal and navegate to the repo folder
-2. run command npm test to run the mocha unit testing from the challenge
+1. Go into your terminal and navigate to the repo folder
+2. run command npm run test to run the mocha unit testing from the challenge
 3. Assigned tests will run
