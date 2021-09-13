@@ -39,14 +39,12 @@ exports.calculation = (firstNumber, operator, secondNumber) => {
   if (flagWhole == 1) {
     result =
       resultWholeNumber + "_" + resultNumerator + "/" + resultDenominator;
-    console.log("= " + result);
   } else if (flagWhole == 2) {
     result = resultWholeNumber;
-    console.log("= " + result);
   } else {
     result = resultNumerator + "/" + resultDenominator;
-    console.log("= " + result);
   }
+  console.log("= " + result);
   return result;
 };
 
@@ -75,7 +73,7 @@ const simplify = (numerator, denominator) => {
   /*Checking if the fraction ends up being an improper fraction and will trasnform it as a mixed number in the output.
 		flagWhole's value will handle this in the calculation function
 	*/
-  if (num > denomPositive) {
+  if (num >= denomPositive) {
     flagWhole = 1;
     resultWholeNumber = parseInt(num / denom);
     let decimal = num / denom - resultWholeNumber;

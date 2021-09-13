@@ -15,10 +15,10 @@ Language used: javascript (using nodejs)
 ### How to run
 1. Clone the repo OL-CodingChallenge
 2. Make sure you have node downloaded in your PC
-3. Go into your terminal and navegate to the repo folder
+3. Go into your terminal and navigate to the repo folder
 4. run the command npm install
 5. run the command npm start or run node main.js
-6. Enter the disired operation (Operand operator Operand) -- Operands and operators can be separated by one or more spaces
+6. Enter the disired operation (Operand operator Operand) -- Operands and operators SHALL be separated by one or more spaces
 7. Result will be shown
 
 ### How to run the tests
