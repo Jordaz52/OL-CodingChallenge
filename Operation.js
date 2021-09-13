@@ -17,7 +17,7 @@ exports.calculation = (firstNumber,operator,secondNumber) => {
 	//throwing error if calculations cant be made with the input.
 	if(isNaN(resultWholeNumber) || isNaN(resultNumerator) || isNaN(resultDenominator)) throw "Unable to do the operation given. Please verify.";
 	
-	//print result
+	//print result and return it for the test cases
 	let result;
 	if(flagWhole == 1){
 		result = resultWholeNumber + "_" + resultNumerator + "/" + resultDenominator;
@@ -32,8 +32,10 @@ exports.calculation = (firstNumber,operator,secondNumber) => {
 	return result;
   }
   
+  //this function, as the name says, is used to simplify the fraction for a better result
   const simplify = (numerator,denominator) => {
 	let resultNumerator = 0, resultDenominator = 0, resultWholeNumber = 0, flagWhole = 0;
+	//function to get the common denominator in order to simplify at its best the fraction
     let commonDenom = function commonDenom(a,b){
       return b ? commonDenom(b, a%b) : a;
     };
@@ -49,6 +51,9 @@ exports.calculation = (firstNumber,operator,secondNumber) => {
 		denomPositive = denom;
 	}
 
+	/*Checking if the fraction ends up being an improper fraction and will trasnform it as a mixed number in the output.
+		flagWhole's value will handle this in the calculation function
+	*/
     if((num>denomPositive)){
 		flagWhole = 1;
         resultWholeNumber = parseInt(num/denom);
@@ -78,6 +83,7 @@ exports.calculation = (firstNumber,operator,secondNumber) => {
 		};
   }
   
+  //This function handles adding and substracting operations
   const addOrSubstract = (firstNumber, operator, secondNumber) => {
 		let resultNumerator, resultDenominator = 0;
 
@@ -100,6 +106,7 @@ exports.calculation = (firstNumber,operator,secondNumber) => {
 		};
   }
   
+  //This function handles multiplying and dividing operations
   const multiplyOrDivide = (firstNumber, operator, secondNumber) => {
 	  if (operator == '/') {
 		  resultNumerator = firstNumber.numerator * secondNumber.denominator;
